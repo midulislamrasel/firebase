@@ -68,3 +68,73 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+##### (INITIAL SETUP)#######
+
+# 1. Firebase visit
+
+    firebase.google.com
+
+# 2. Create a new firebase Project
+
+    Projet name :
+
+# 3. (Vist Doc) go to Docs
+
+    Build>Authentication>web>get start
+
+# 4. Register web app
+
+    firebae project home>click web>giv name and register
+
+# 5. Install firebase for you project
+
+    npm install firebase
+
+# 6. Dangerous
+
+    get firebase config and put it in src>firebase>(firebase.init.js (filenaem))
+
+# 7. Export
+
+    app from firebase.init.js(filename)
+    export default app;
+
+##### (PROVIDER SETUP)#######
+
+# 8. app.js
+
+    import "./App.css";
+    import { GoogleAuthProvider, getAuth } from "firebase/auth";
+    import app from "./firebase/firebase.init";
+
+    const auth = getAuth(app);
+
+    function App() {
+    const provider = new GoogleAuthProvider();
+    return <div className="App"></div>;
+    }
+    export default App;
+
+# 9. Go go firebase > Build > Authentication > sign In method
+
+    Enable google sign in method
+
+# 10. HandelGoogleSinginIN Button
+
+        <button onClick={handelGoogleSingIn}>Google Authentication</button>
+
+# 11 Firebase Popup
+
+    const handelGoogleSingIn = () => {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+    const user = result.user;
+    console.log(user);
+    })
+    .catch((error) => {
+    console.log("error: ", error);
+    });
+    };
+
+##### (DISPLAY USER DATA)#######

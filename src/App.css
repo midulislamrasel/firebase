@@ -27,7 +27,25 @@
 .App-link {
   color: #61dafb;
 }
-
+.profile {
+  padding: 20px;
+  font-size: 18px;
+  background-color: #929395;
+  width: 500px;
+  height: auto;
+  text-align: center;
+  color: #ffff;
+  /* align-items: center; */
+  margin: auto;
+}
+.profile img {
+  border-radius: 50%;
+}
+.userInfo {
+  width: 300px;
+  margin: auto;
+  text-align: left;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
